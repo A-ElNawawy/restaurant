@@ -1,0 +1,1 @@
+export const body_font = '60px';

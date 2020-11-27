@@ -1,0 +1,10 @@
+export const gold_color = '#ae8648';
+export const border_color  = "#e4e4e4";
+export const big_Text_color  = "#444";
+export const small_Text_color  = "#444";
+export const white_color  = "#fff";
+export const black_color  = "#000";
+export const input_color  = "#464646";
+export const input_bg_color  = "#fafafa";
+export const input_border_color  = "#e1e1e1";
+export const input_shadow_color  = "#c9c9c9";

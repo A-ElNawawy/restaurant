@@ -1,0 +1,32 @@
+/* =============StartImport================== */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* ===============EndImport================== */
+/* ===============StartResets================== */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+/* =================EndResets================== */
+/* =============StartRulz================== */
+@font-face {
+  font-family: Nexa_Rust_Extras_Free;
+  src: url(./includes/fonts/nexa-rust.extras-free.otf);
+}
+body{
+  font-family: 'Lora', serif;
+  font-weight: 300;
+  font-size: 14px;
+  height: 2000px;
+}
+.capital{
+  text-transform: capitalize;
+}
+.upper{
+  text-transform: uppercase;
+}
+/* ===============EndRulz================== */
