@@ -17,10 +17,13 @@ ul{
   font-family: Nexa_Rust_Extras_Free;
   src: url(./includes/fonts/nexa-rust.extras-free.otf);
 }
+@font-face {
+  font-family: Muli;
+  src: url(./includes/fonts/muli.light.ttf);
+}
 body{
-  font-family: 'Lora', serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 12px;
   height: 2000px;
 }
 .capital{
