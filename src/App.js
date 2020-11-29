@@ -238,9 +238,120 @@ const Form = styled.div`
     grid-column: 1 / span 2;
   }
 `;
-const Counters = styled.div``;
-const FromBlog = styled.div``;
+const Counters = styled.div`
+  .FixedBG{
+    padding: 150px 0 140px;
+    height: 500px;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    justify-content: center;
+    gap: 0 3.5%;
+  }
+  h3{
+    margin-bottom: 15px;
+  }
+  h2{
+    margin-bottom: 5px;
+    font-size: 60px;
+  }
+  .image{
+    margin-bottom: 25px;
+  }
+`;
+const FromBlog = styled.div`
+  .container{
+    padding: 80px 0;
+    display: grid;
+    justify-content: center;
+    row-gap: 40px;
+    column-gap: 20px;
+    grid-template-areas:
+      'box1 box1 box1'
+      'box2 box3 box4'
+      'box5 box5 box5'
+    ;
+    .box1{grid-area: box1;}
+    .box2{grid-area: box2;}
+    .box3{grid-area: box3;}
+    .box4{grid-area: box4;}
+    .box5{grid-area: box5;}
+    .line{margin-top: -25px;}
+    .Card{
+      .image{
+        overflow: hidden;
+        position: relative;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 190px;
+        img{
+          transition: all .3s ease-in-out;
+          height: 100%;
+        }
+        .link{
+          transition: all .5s ease-in-out;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+          opacity: 0;
+        }
+        .over-lay{
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          transition: all .5s ease-in-out;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #000;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .topic{
+        padding: 0 30px 30px;
+        h5{
+          margin-bottom: 10px;
+        }
+      }
+      :hover{
+        .image{
+          img{
+            transform: scale(1.5)
+            rotate(10deg);
+          }
+          .link{
+            opacity: 1;
+          }
+          .over-lay{
+            opacity: .7;
+          }
+        }
+        .topic{
+          h5{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .load-more{
+      display: flex;
+      justify-content: center;
+      a{
+        font-size: 15px!important; /* To Be Removed After Adjusting Button Component */
+      }
+    }
+  }
+`;
 const ComingEvents = styled.div``;
+
 export default function App() {
   return (
     <MyApp className="App">
