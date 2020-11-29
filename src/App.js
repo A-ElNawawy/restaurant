@@ -21,6 +21,7 @@ import {paragraph} from './includes/langs/english';
 /* Start General Styling */
 const MyApp = styled.div`
   color: ${Co.big_Text_color};
+  font-family: ${Co.body_font_family};
   .no-wrap{
     display: flex;
     justify-content: space-between;
@@ -74,10 +75,10 @@ const Header = styled.header`
     }
     .left{
       .logo{
-        font-family: 'Great Vibes', cursive;
+        font-family: ${Co.logo_font_family};
         font-size: 40px;
         line-height: 78px;
-        color: #505050;
+        color: ${Co.logo_color};
       }
     }
     .right{
@@ -155,17 +156,18 @@ const H2 = styled.h2`
   text-transform: capitalize;
 `;
 const H3 = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   font-style: italic;
   text-transform: capitalize;
+  text-align: center;
 `;
 const H4 = styled.h4`
   text-align: center;
 `;
 const P = styled.p`
-  font-family: 'Mulish', sans-serif;
-  font-weight: 100;
+  font-family: ${Co.p_font_family};
+  line-height: 1.625;
 `;
 const Card = styled.div`
   padding: 10px 15px;

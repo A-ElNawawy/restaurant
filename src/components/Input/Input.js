@@ -12,7 +12,7 @@ const Input = styled.input`
   color: ${Co.input_color};
   background-color: ${Co.input_bg_color};
   padding: 10px 16px;
-  font-family: "Lora", serif;
+  font-family: ${Co.body_font_family};
   font-weight: 400;
   line-height: 1.42857143;
   border: 1px solid ${Co.input_border_color};

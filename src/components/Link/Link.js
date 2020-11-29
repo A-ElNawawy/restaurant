@@ -1,5 +1,6 @@
 import styled, {css} from 'styled-components';
 import * as Co from './../../includes/constants';
+// props: hover, active
 const Link = styled.a`
   position: relative;
   text-decoration: none;

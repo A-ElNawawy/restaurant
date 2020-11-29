@@ -8,3 +8,4 @@ export const input_color  = "#464646";
 export const input_bg_color  = "#fafafa";
 export const input_border_color  = "#e1e1e1";
 export const input_shadow_color  = "#c9c9c9";
+export const logo_color  = "#505050";
