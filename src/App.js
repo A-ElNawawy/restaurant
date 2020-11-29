@@ -1,4 +1,3 @@
-import './App.css';
 import styled from 'styled-components';
 
 /* Start Importing Components */
@@ -8,6 +7,10 @@ import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 import NexaFont from './components/NexaFont/NexaFont';
 import DecorationLine from './components/DecorationLine/DecorationLine';
+import FixedBG from './components/FixedBG/FixedBG';
+import Card from './components/Card/Card';
+import H2 from './components/H2/H2';
+import H5 from './components/H5/H5';
 /* End Importing Components */
 
 /* Start Importing Constants */
@@ -15,7 +18,7 @@ import * as Co from './includes/constants';
 /* End Importing Constants */
 
 /* Start Importing Languages */
-import {paragraph} from './includes/langs/english';
+import {paragraph, paragraph2} from './includes/langs/english';
 /* End Importing Languages */
 
 /* Start General Styling */
@@ -110,20 +113,37 @@ const Carousel = styled.div`
 `;
 const Features = styled.div`
   .container{
+    padding: 80px 0;
+    display: grid;
+    justify-content: center;
+    row-gap: 40px;
+    column-gap: 40px;
+    grid-template-areas:
+      'box1 box1 box1'
+      'box2 box3 box4'
+    ;
     .box1{grid-area: box1;}
     .box2{grid-area: box2;}
     .box3{grid-area: box3;}
     .box4{grid-area: box4;}
-    padding: 80px 0;
-    display: grid;
-    justify-content: center;
-    grid-template-areas:
-      'box1 box1 box1'
-      'box2 box3 box4';
-      grid-row-gap: 40px;
-  }
-  .line{
-    margin-top: -25px;
+    .line{margin-top: -25px;}
+    .Card{
+      :hover{
+        h3{
+          transition: all .4s ease-in-out;
+          color: ${Co.gold_color};
+        }
+      }
+      img{
+        max-width: 200px;
+      }
+      h3{
+        margin-bottom: 23px;
+      }
+      p{
+        text-align: center;
+      }
+    }
   }
 `;
 const Intro = styled.div`
@@ -146,15 +166,6 @@ const Intro = styled.div`
     margin-top: 10px;
   }
 `;
-const H2 = styled.h2`
-  font-family: 'Great Vibes', cursive;
-  font-size: 40px;
-  font-weight: normal;
-  line-height: 78px;
-  color: #505050;
-  text-align: center;
-  text-transform: capitalize;
-`;
 const H3 = styled.h3`
   font-size: 20px;
   font-weight: 400;
@@ -169,43 +180,10 @@ const P = styled.p`
   font-family: ${Co.p_font_family};
   line-height: 1.625;
 `;
-const Card = styled.div`
-  padding: 10px 15px;
-  max-width: 400px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  /*background-color: green;*/
-  :hover{
-    h3{
-      transition: all .4s ease-in-out;
-      color: ${Co.gold_color};
-    }
-  }
-  > *{
-    flex-basis: 100%;
-  }
-  img{
-    max-width: 200px;
-    margin-bottom: 24px;
-  }
-  h3{
-    margin-bottom: 23px;
-  }
-  h3,p{
-    text-align: center;
-  }
-`;
 const Offer = styled.div`
-  background-image: url(http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/counts1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 90px 0 150px;
-  height: 500px;
-  color: ${Co.white_color};
-  .nexa-font{
-    font-size: 82px;
+  .FixedBG{
+    padding: 90px 0 150px;
+    height: 500px;
   }
   p{
     font-size: 48px;
@@ -411,23 +389,21 @@ export default function App() {
             <Intro className="box1">
               <H2>Features</H2>
               <DecorationLine className="line">M</DecorationLine>
-              {/*<img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/icon2.png" alt="separator"></img>*/}
-              {/*<NexaFont className="nexa-font">KL</NexaFont>*/}
               <P>
                 {paragraph}
               </P>
             </Intro>
-            <Card className="box2">
+            <Card className="Card box2">
               <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/serv11.jpg" alt="services"></img>
               <H3>serving with love</H3>
               <P>{paragraph}</P>
             </Card>
-            <Card className="box3">
+            <Card className="Card box3">
               <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/pizza1.png" alt="services"></img>
               <H3>your italian pizza</H3>
               <P>{paragraph}</P>
             </Card>
-            <Card className="box4">
+            <Card className="Card box4">
               <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/bread1.png" alt="services"></img>
               <H3>daily breads</H3>
               <P>{paragraph}</P>
@@ -435,15 +411,20 @@ export default function App() {
           </Container>
         </Features>
         <Offer className="Offer">
-          <H4>
-            <NexaFont className="nexa-font">KL</NexaFont>
-          </H4>
-          <H4>
-            <p>“ Fresh and healthy master of town ”</p>
-          </H4>
-          <div className="buy-now">
-            <Button whiteButton>buy now</Button>
-          </div>
+          <FixedBG
+            className="FixedBG"
+            color={Co.white_color}
+            url= "http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/counts1.jpg">
+            <H4>
+              <NexaFont fontSize="82px" className="NexaFont">KL</NexaFont>
+            </H4>
+            <H4>
+              <p>“ Fresh and healthy master of town ”</p>
+            </H4>
+            <div className="buy-now">
+              <Button whiteButton>buy now</Button>
+            </div>
+          </FixedBG>
         </Offer>
         <BookATable className="BookATable">
           <Container className="container">
@@ -466,8 +447,107 @@ export default function App() {
             </Form>
           </Container>
         </BookATable>
-        <Counters className="Counters">Counters</Counters>
-        <FromBlog className="FromBlog">FromBlog</FromBlog>
+        <Counters className="Counters">
+          <FixedBG
+            className="FixedBG"
+            color={Co.white_color}
+            //url="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/promote1.jpg"
+            style={{
+              backgroundColor: "#333"
+            }}
+          >
+            <Container className="container">
+              <Card className="Card">
+                <H3>coffees served</H3>
+                <H2 color={Co.white_color}>2538</H2>
+                <NexaFont fontSize="70px" className="NexaFont image">W</NexaFont>
+                <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+              </Card>
+              <Card className="Card">
+                <H3>chickens served</H3>
+                <H2 color={Co.white_color}>1264</H2>
+                <NexaFont fontSize="70px" className="NexaFont image">e</NexaFont>
+                <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+              </Card>
+              <Card className="Card">
+                <H3>meats cooked</H3>
+                <H2 color={Co.white_color}>6538</H2>
+                <NexaFont fontSize="70px" className="NexaFont image">i</NexaFont>
+                <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+              </Card>
+              <Card className="Card">
+                <H3>fishes fried</H3>
+                <H2 color={Co.white_color}>462</H2>
+                <NexaFont fontSize="70px" className="NexaFont image">n</NexaFont>
+                <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+              </Card>
+            </Container>
+          </FixedBG>
+        </Counters>
+        <FromBlog className="FromBlog">
+          <Container className="container">
+            <Intro className="box1">
+              <H2>Features</H2>
+              <DecorationLine className="line">M</DecorationLine>
+              <P>
+                {paragraph}
+              </P>
+            </Intro>
+            <Card border className="Card box2">
+              <div className="image">
+                <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg" alt="services"></img>
+                <div className="link">
+                  <Button goldenButton href="#void">XX</Button>
+                </div>
+                <div className="over-lay"></div>
+              </div>
+              <div className="topic">
+                <H5><Link href="#void">hand picked meals for our best.</Link></H5>
+                <P>{paragraph2}</P>
+                <div className="read-more">
+                  <Button goldenButton href="#void">Read more</Button>
+                </div>
+              </div>
+            </Card>
+            <Card border className="Card box3">
+              <div className="image">
+                <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg" alt="services"></img>
+                <div className="link">
+                  <Button goldenButton href="#void">XX</Button>
+                </div>
+                <div className="over-lay"></div>
+              </div>
+              <div className="topic">
+                <H5><Link href="#void">daily special foods that you will going to love</Link></H5>
+                <P>{paragraph2}</P>
+                <div className="read-more">
+                  <Button goldenButton href="#void">Read more</Button>
+                </div>
+              </div>
+            </Card>
+            <Card border className="Card box4">
+              <div className="image">
+                <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg" alt="services"></img>
+                <div className="link">
+                  <Button goldenButton href="#void">XX</Button>
+                </div>
+                <div className="over-lay"></div>
+              </div>
+              <div className="topic">
+                <H5><Link href="#void">chilli cooking lesson from our master chefs</Link></H5>
+                <P>{paragraph2}</P>
+                <div className="read-more">
+                  <Button goldenButton href="#void">Read more</Button>
+                </div>
+              </div>
+            </Card>
+            <div className="load-more box5">
+              <Button goldenButton>
+                <NexaFont>K</NexaFont> load more <NexaFont>L</NexaFont>
+              </Button>
+            </div>
+          </Container>
+        </FromBlog>
         <ComingEvents className="ComingEvents">ComingEvents</ComingEvents>
       </section>
       <footer>
