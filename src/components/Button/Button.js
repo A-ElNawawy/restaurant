@@ -1,18 +1,19 @@
 import styled, {css} from 'styled-components';
 import * as Co from './../../includes/constants';
+// Props: whiteButton, goldenButton
 const Button = styled.a`
   text-decoration: none;
   color: inherit;
-  padding: 14px 30px;
-  font-size: 13px;
   border-radius: 5px;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  font-weight: bold;
   :hover{
     cursor: pointer;
   }
   ${props => props.whiteButton && css`
+    padding: 14px 30px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: capitalize;
     position: relative;
     background-color: ${Co.white_color};
     color: ${Co.black_color};
@@ -33,6 +34,13 @@ const Button = styled.a`
         height: 100%;
       }
     }
+  `}
+  ${props => props.goldenButton && css`
+    background-color: ${Co.gold_color};
+    color: ${Co.white_color};
+    padding: 9px 12px;
+    font-style: italic;
+    font-size: 10px;
   `}
 `;
 export default Button;
