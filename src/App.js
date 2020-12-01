@@ -11,6 +11,7 @@ import FixedBG from './components/FixedBG/FixedBG';
 import Card from './components/Card/Card';
 import H2 from './components/H2/H2';
 import H5 from './components/H5/H5';
+import Newsletter from './components/Newsletter/Newsletter';
 /* End Importing Components */
 
 /* Start Importing Constants */
@@ -102,7 +103,8 @@ const Header = styled.header`
 const Carousel = styled.div`
   background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
-  background-image: url(http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/01/background11.jpg);
+  background-image: url('./demoData/images/bg_wood.jpg'); /* Not Working :(/ */
+  background-image: url('http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/01/background11.jpg');
   background-size: cover;
   background-position: center top;
   width: 100%;
@@ -126,7 +128,6 @@ const Features = styled.div`
     .box2{grid-area: box2;}
     .box3{grid-area: box3;}
     .box4{grid-area: box4;}
-    .line{margin-top: -25px;}
     .Card{
       :hover{
         h3{
@@ -136,9 +137,6 @@ const Features = styled.div`
       }
       img{
         max-width: 200px;
-      }
-      h3{
-        margin-bottom: 23px;
       }
       p{
         text-align: center;
@@ -159,11 +157,9 @@ const Intro = styled.div`
     max-width:50px;
     max-height:20px;
   }
-  h2,p{
-    text-align: center;
-  }
   p{
-    margin-top: 10px;
+    text-align: center;
+    margin-top: 15px;
   }
 `;
 const H3 = styled.h3`
@@ -198,16 +194,14 @@ const Offer = styled.div`
 `;
 const BookATable = styled.div`
   padding: 80px 0;
-  .line{
-    margin-top: -25px;
-  }
   .form{
+    width: 50%;
+    margin-left: auto;
     margin-top: 65px;
   }
 `;
 const Form = styled.div`
-  width: 50%;
-  margin-left: auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 48% 48%;
   justify-content: space-between;
@@ -255,7 +249,7 @@ const FromBlog = styled.div`
     .box3{grid-area: box3;}
     .box4{grid-area: box4;}
     .box5{grid-area: box5;}
-    .line{margin-top: -25px;}
+    /*.line{margin-top: -25px;}*/
     .Card{
       .image{
         overflow: hidden;
@@ -295,9 +289,6 @@ const FromBlog = styled.div`
       }
       .topic{
         padding: 0 30px 30px;
-        h5{
-          margin-bottom: 10px;
-        }
       }
       :hover{
         .image{
@@ -328,7 +319,71 @@ const FromBlog = styled.div`
     }
   }
 `;
-const ComingEvents = styled.div``;
+const UpComingEvents = styled.div`
+  .FixedBG{
+    padding: 80px 0;
+  }
+`;
+const Footer = styled.footer`
+  .Newsletter{
+    color: ${Co.white_color};
+    .container{
+      height: 100px;
+      .left{
+        /*background-color: red;*/
+        flex-basis: 57%;
+        align-items: center;
+        h5{
+          /*margin-right: 28px;*/
+          font-size: 28px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+      .right{
+        /*background-color: green;*/
+        flex-basis: 28%;
+        .Form{
+          position: relative;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          input{
+            line-height: 1;
+            height: 40px;
+            ::placeholder{
+              color: ${Co.white_color};
+            }
+          }
+          input:not([type="submit"]){
+            background-color: #0000004d;
+            color: ${Co.white_color};
+            padding: 10px;
+            /*font-size: 15px;*/
+            font-family: ${Co.p_font_family};
+            flex-basis: 100%;
+          }
+          i.fa-envelope{
+            position: absolute;
+            top: 42px;
+            right: 115px;
+            transform: rotate(-25deg);
+            font-size: 18px;
+          }
+          [type="submit"]{
+            margin-left: 8px;
+            padding: 10px 15px;
+            font-weight: bold;
+            /*font-size: 10px;*/
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default function App() {
   return (
@@ -394,19 +449,40 @@ export default function App() {
               </P>
             </Intro>
             <Card className="Card box2">
-              <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/serv11.jpg" alt="services"></img>
-              <H3>serving with love</H3>
-              <P>{paragraph}</P>
+              <img
+                className="image"
+                //src="./demoData/images/features1.jpg"
+                src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/serv11.jpg"
+                alt="services"
+              ></img>
+              <div className="topic">
+                <H3>serving with love</H3>
+                <P>{paragraph}</P>
+              </div>
             </Card>
             <Card className="Card box3">
-              <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/pizza1.png" alt="services"></img>
-              <H3>your italian pizza</H3>
-              <P>{paragraph}</P>
+              <img
+                className="image"
+                //src="./demoData/images/features2.png"
+                src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/pizza1.png"
+                alt="services"
+              ></img>
+              <div className="topic">
+                <H3>your italian pizza</H3>
+                <P>{paragraph}</P>
+              </div>
             </Card>
             <Card className="Card box4">
-              <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/bread1.png" alt="services"></img>
-              <H3>daily breads</H3>
-              <P>{paragraph}</P>
+              <img
+                className="image"
+                //src="./demoData/images/features3.png"
+                src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/bread1.png"
+                alt="services"
+              ></img>
+              <div className="topic">
+                <H3>daily breads</H3>
+                <P>{paragraph}</P>
+              </div>
             </Card>
           </Container>
         </Features>
@@ -414,7 +490,9 @@ export default function App() {
           <FixedBG
             className="FixedBG"
             color={Co.white_color}
-            url= "http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/counts1.jpg">
+            //url= "./demoData/images/bg_vegetables.jpg"
+            url="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/counts1.jpg"
+          >
             <H4>
               <NexaFont fontSize="82px" className="NexaFont">KL</NexaFont>
             </H4>
@@ -431,27 +509,27 @@ export default function App() {
             <Intro>
               <H2>book a table</H2>
               <DecorationLine className="line">M</DecorationLine>
-              {/*<img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/icon2.png" alt="separator"></img>*/}
               <P>
                 {paragraph}
               </P>
             </Intro>
-            <Form className="form">
-              <Input type="text" placeholder="Name" name="name"></Input>
-              <Input type="text" placeholder="Last Name" name="last-name"></Input>
-              <Input type="email" placeholder="E-mail" name="email"></Input>
-              <Input type="text" placeholder="time" name="time"></Input>
-              <Input type="date" placeholder="" name="date"></Input>
-              <Input type="number" placeholder="Guest Number" name="guest-number"></Input>
-              <Input button className="full-width" type="submit" value="Book A Table" name="guest-number"></Input>
-            </Form>
+            <div className="form">
+              <Form className="Form">
+                <Input normal type="text" placeholder="Name" name="name"></Input>
+                <Input normal type="text" placeholder="Last Name" name="last-name"></Input>
+                <Input normal type="email" placeholder="E-mail" name="email"></Input>
+                <Input normal type="text" placeholder="time" name="time"></Input>
+                <Input normal type="date" placeholder="" name="date"></Input>
+                <Input normal type="number" placeholder="Guest Number" name="guest-number"></Input>
+                <Input button className="full-width" type="submit" value="Book A Table" name="guest-number"></Input>
+              </Form>
+            </div>
           </Container>
         </BookATable>
         <Counters className="Counters">
           <FixedBG
             className="FixedBG"
             color={Co.white_color}
-            //url="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/promote1.jpg"
             style={{
               backgroundColor: "#333"
             }}
@@ -487,7 +565,7 @@ export default function App() {
         <FromBlog className="FromBlog">
           <Container className="container">
             <Intro className="box1">
-              <H2>Features</H2>
+              <H2>from the blog</H2>
               <DecorationLine className="line">M</DecorationLine>
               <P>
                 {paragraph}
@@ -495,7 +573,11 @@ export default function App() {
             </Intro>
             <Card border className="Card box2">
               <div className="image">
-                <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg" alt="services"></img>
+                <img
+                  //src="./demoData/images/blog1.jpg"
+                  src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
+                  alt="services"
+                ></img>
                 <div className="link">
                   <Button goldenButton href="#void">XX</Button>
                 </div>
@@ -511,7 +593,11 @@ export default function App() {
             </Card>
             <Card border className="Card box3">
               <div className="image">
-                <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg" alt="services"></img>
+                <img
+                  //src="./demoData/images/blog3.jpg"
+                  src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog21-1024x695.jpg"
+                  alt="services"
+                ></img>
                 <div className="link">
                   <Button goldenButton href="#void">XX</Button>
                 </div>
@@ -527,7 +613,11 @@ export default function App() {
             </Card>
             <Card border className="Card box4">
               <div className="image">
-                <img src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg" alt="services"></img>
+                <img
+                  //src="./demoData/images/blog1.jpg"
+                  src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
+                  alt="services"
+                ></img>
                 <div className="link">
                   <Button goldenButton href="#void">XX</Button>
                 </div>
@@ -548,10 +638,43 @@ export default function App() {
             </div>
           </Container>
         </FromBlog>
-        <ComingEvents className="ComingEvents">ComingEvents</ComingEvents>
+        <UpComingEvents className="UpComingEvents">
+          <FixedBG
+            className="FixedBG"
+            color={Co.white_color}
+            //url= "./demoData/images/bg_street.jpg"
+            url="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/imageback31.jpg"
+          >
+            <Container>
+              <Intro className="box1">
+                <H2>upcoming events</H2>
+                <DecorationLine className="line">M</DecorationLine>
+                <P>
+                  {paragraph}
+                </P>
+              </Intro>
+              <Carousel></Carousel>
+            </Container>
+          </FixedBG>
+        </UpComingEvents>
       </section>
-      <footer>
-        <div className="Newsletter">newsletter</div>
+      <Footer>
+        <Newsletter className="Newsletter">
+          <Container className="container no-wrap">
+            <div className="left no-wrap">
+              <H5>newsletter</H5>
+              <P>sign up with your email to get updates fresh updates about our events</P>
+            </div>
+            <div className="right">
+              <Form className="Form">
+                <Input type="text" placeholder="your email address" name="name"></Input>
+                <i className="far fa-envelope"></i>
+                {/*<i class="far fa-envelope"></i>*/}
+                <Input button whiteButton type="submit" value="sign up" name="guest-number"></Input>
+              </Form>
+            </div>
+          </Container>
+        </Newsletter>
         <div className="Summery">
           <div>About us</div>
           <div>Recent Posts</div>
@@ -562,7 +685,7 @@ export default function App() {
           <div>logo</div>
           <div>copy right</div>
         </div>
-      </footer>
+      </Footer>
     </MyApp>
   );
 };

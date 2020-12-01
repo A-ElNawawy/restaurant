@@ -3,16 +3,16 @@ import * as Co from './../../includes/constants';
 const Input = styled.input`
   outline: none;
   font-size: 13px;
+  font-family: ${Co.body_font_family};
   border-radius: 5px;
   display: block;
   border: none;
   text-transform: capitalize;
 
-  ${props => !props.button && css`
+  ${props => props.normal && css`
   color: ${Co.input_color};
   background-color: ${Co.input_bg_color};
   padding: 10px 16px;
-  font-family: ${Co.body_font_family};
   font-weight: 400;
   line-height: 1.42857143;
   border: 1px solid ${Co.input_border_color};
@@ -27,6 +27,10 @@ const Input = styled.input`
     :hover{
       cursor: pointer;
     }
+    ${props => props.whiteButton && css`
+      color: ${Co.small_Text_color};
+      background-color: ${Co.white_color};
+    `}
   `}
 `;
 export default Input;
