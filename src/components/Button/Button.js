@@ -1,6 +1,8 @@
 import styled, {css} from 'styled-components';
 import * as Co from './../../includes/constants';
-// Props: whiteButton, goldenButton
+// Props:
+// -----
+// whiteButton, goldenButton
 const Button = styled.a`
   text-decoration: none;
   color: inherit;

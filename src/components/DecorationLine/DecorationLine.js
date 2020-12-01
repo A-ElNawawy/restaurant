@@ -16,11 +16,11 @@ const Fig = styled(NexaFont)`
   }
   :before{
     left: -130px;
-    top: 27px;
+    top: 18px;
   }
   :after{
     left: 89px;
-    top: 27px;
+    top: 18px;
   }
 `;
 

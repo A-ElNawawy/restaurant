@@ -1,6 +1,8 @@
 import styled, {css} from 'styled-components';
 import * as Co from './../../includes/constants';
-// props: maxWidth, border
+// Props:
+// -----
+// maxWidth, border
 const Card = styled.div`
   max-width: ${props => props.maxWidth ? props.maxWidth : "280px"};
   ${props => props.border && css`
@@ -21,8 +23,13 @@ const Card = styled.div`
   .image{
     margin-bottom: 20px;
   }
-  p ~ :first-of-type{
-    margin-top: 25px;
+  .topic{
+    & :first-child{
+      margin-bottom: 14px;
+    }
+    p ~ :first-of-type{
+      margin-top: 25px;
+    }
   }
 `;
 export default Card;

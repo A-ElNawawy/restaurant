@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-// props: fontSize
+// Props:
+// -----
+// fontSize
 const NexaFont = styled.span`
   font-family: Nexa_Rust_Extras_Free;
   text-align: center;
