@@ -2,9 +2,9 @@ import styled, {css} from 'styled-components';
 import * as Co from './../../includes/constants';
 // Props:
 // -----
-// maxWidth, border
+// maxWidth, border, imgHeight
 const Card = styled.div`
-  max-width: ${props => props.maxWidth ? props.maxWidth : "280px"};
+  max-width: ${props => props.maxWidth ? props.maxWidth : "340px"};
   ${props => props.border && css`
     border: 1px solid ${Co.input_border_color};
     border-radius: 5px;
@@ -16,12 +16,12 @@ const Card = styled.div`
   > *{
     flex-basis: 100%;
   }
-  img{
-    max-width: 100%;
-    /*height: 100%;*/
-  }
   .image{
     margin-bottom: 20px;
+    height: ${props => props.imgHeight? props.imgHeight : "235px"};
+  }
+  img{
+    width: 100%;
   }
   .topic{
     & :first-child{
