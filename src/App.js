@@ -18,7 +18,7 @@ import SideCard from './components/SideCard/SideCard';
 import H6 from './components/H6/H6';
 import CopyRight from './components/CopyRight/CopyRight';
 //import SlideShow from './components/SlideShow/SlideShow';
-import SimpleSlideShow from './components/SimpleSlideShow/SimpleSlideShow';
+//import SimpleSlideShow from './components/SimpleSlideShow/SimpleSlideShow';
 import SlideShowAuto from './components/SlideShowAuto/SlideShowAuto';
 /* End Importing Components */
 
@@ -899,7 +899,7 @@ export default class App extends React.Component {
                 <Link className="" href="#void">pronto</Link>
               </div>
               <div className="parag">
-                <P>Copyright &copy; 2015 Blicca Themes. All rights reserved.</P>
+                <P>Copyright &copy; 2020 ElNawawy Web. All rights reserved.</P>
               </div>
             </Container>
           </CopyRight>
