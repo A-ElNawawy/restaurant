@@ -16,14 +16,18 @@ import Newsletter from './components/Newsletter/Newsletter';
 import Summery from './components/Summery/Summery';
 import SideCard from './components/SideCard/SideCard';
 import H6 from './components/H6/H6';
+import P from './components/P/P';
 import CopyRight from './components/CopyRight/CopyRight';
-import SlideShowSimple from './components/SlideShowSimple/SlideShowSimple';
-//import SlideShowAuto from './components/SlideShowAuto/SlideShowAuto';
+import SlideShowAuto from './components/SlideShowAuto/SlideShowAuto';
 /* End Importing Components */
 
 /* Start Importing Constants */
 import * as Co from './includes/constants';
 /* End Importing Constants */
+
+/* Start Importing Images */
+import * as Imgs from './demoData/images/index';
+/* End Importing Images */
 
 /* Start Importing Languages */
 import {paragraph, paragraph2} from './includes/langs/english';
@@ -108,46 +112,10 @@ const Header = styled.header`
   }
 `;
 const Carousel = styled.div`
-  background-color: rgba(0, 0, 0, 0);
-  background-repeat: no-repeat;
-  background-image: url('./demoData/images/bg_wood.jpg'); /* Not Working :(/ */
-  background-image: url('http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/01/background11.jpg');
-  background-size: cover;
-  background-position: center top;
-  width: 100%;
+  /*width: 100%;*/
+  /*border: 30px solid #000;*/
   height: 514px;
-  padding: 125px 0;
-  opacity: 1;
-  visibility: inherit;
-  /*z-index: 20;*/
-  .Container{
-    display: flex;
-  }
-  .flashy{
-    color: ${Co.white_color};
-    width: 350px;
-    text-align: center;
-    display: none;
-    &.no1{
-      margin-left: 150px;
-    }
-    &.no2{
-      /*display: none;*/
-      margin-left: auto;
-      margin-right: 150px;
-    }
-    .like-logo{
-      font-family: ${Co.logo_font_family};
-      font-size: 80px;
-      line-height: 1;
-      text-transform: capitalize;
-    }
-    .second{
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
+  /*padding: 125px 0;*/
 `;
 const Features = styled.div`
   .container{
@@ -209,10 +177,6 @@ const H3 = styled.h3`
 const H4 = styled.h4`
   text-align: center;
 `;
-const P = styled.p`
-  font-family: ${Co.p_font_family};
-  line-height: 1.625;
-`;
 const Offer = styled.div`
   .FixedBG{
     padding: 90px 0 150px;
@@ -250,7 +214,19 @@ const Form = styled.div`
 const Counters = styled.div`
   .FixedBG{
     padding: 150px 0 140px;
-    height: 500px;
+    position: relative;
+    .over-lay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+      opacity: .7;
+      width: 100%;
+      height: 100%;
+    }
+    .Card{
+      z-index: 2;
+    }
   }
   .container{
     display: grid;
@@ -260,13 +236,19 @@ const Counters = styled.div`
   }
   h3{
     margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
   }
   h2{
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     font-size: 60px;
+    font-family: ${Co.body_font_family};
+    font-weight: bold;
+    font-style: normal;
   }
-  .image{
-    margin-bottom: 25px;
+  .pic{
+    margin-bottom: 30px;
   }
 `;
 const FromBlog = styled.div`
@@ -292,7 +274,6 @@ const FromBlog = styled.div`
         position: relative;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        /*height: 190px;*/
         img{
           transition: all .3s ease-in-out;
           height: 100%;
@@ -489,30 +470,6 @@ const Footer = styled.footer`
 `;
 
 export default class App extends React.Component {
-  //flashing(){
-  //  setInterval(this.showElement(flashy2), 1000);
-  //}
-
-  //hideElement(element) {
-  //}
-  //showElement(element) {
-  //}
-  twist(hide, show) {
-    hide.style.display = "none";
-    show.style.display = "block";
-    //console.log(hide);
-  }
-  componentDidMount(){
-    let flashy1 = document.getElementById("no1");
-    let flashy2 = document.getElementById("no2");
-    //this.twist(flashy1, flashy2)
-    setInterval(this.twist(flashy1, flashy2), 2000);
-    let flashy = flashy1;
-    flashy1 = flashy2;
-    flashy2 = flashy;
-    //setInterval(this.twist(flashy1, flashy2), 2000);
-    //this.flashing();
-  }
   render() {
     return (
       <MyApp className="App">
@@ -566,19 +523,8 @@ export default class App extends React.Component {
           </nav>
         </Header>
         <section className="Body">
-          <SlideShowSimple></SlideShowSimple>
-          {/*<SlideShowAuto></SlideShowAuto>*/}
           <Carousel className="Carousel">
-            <Container className="Container">
-              <div id="no1" className="flashy no1">
-                <P className="like-logo">beef steaks</P>
-                <P className="second">yours to savor</P>
-              </div>
-              <div id="no2" className="flashy no2">
-                <P className="like-logo">tasty</P>
-                <P className="second">try our beff</P>
-              </div>
-            </Container>
+            <SlideShowAuto></SlideShowAuto>
           </Carousel>
           <Features className="Features">
             <Container className="container">
@@ -592,8 +538,7 @@ export default class App extends React.Component {
               <Card imgHeight="auto" className="Card box2">
                 <img
                   className="image"
-                  //src="./demoData/images/features1.jpg"
-                  src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/serv11.jpg"
+                  src={Imgs.features1}
                   alt="services"
                 ></img>
                 <div className="topic">
@@ -604,8 +549,7 @@ export default class App extends React.Component {
               <Card imgHeight="auto" className="Card box3">
                 <img
                   className="image"
-                  //src="./demoData/images/features2.png"
-                  src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/pizza1.png"
+                  src={Imgs.features2}
                   alt="services"
                 ></img>
                 <div className="topic">
@@ -616,8 +560,7 @@ export default class App extends React.Component {
               <Card imgHeight="auto" className="Card box4">
                 <img
                   className="image"
-                  //src="./demoData/images/features3.png"
-                  src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/bread1.png"
+                  src={Imgs.features3}
                   alt="services"
                 ></img>
                 <div className="topic">
@@ -631,8 +574,7 @@ export default class App extends React.Component {
             <FixedBG
               className="FixedBG"
               color={Co.white_color}
-              //url= "./demoData/images/bg_vegetables.jpg"
-              url="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/counts1.jpg"
+              url={Imgs.bg_vegetables}
             >
               <H4>
                 <NexaFont fontSize="82px" className="NexaFont">KL</NexaFont>
@@ -671,34 +613,33 @@ export default class App extends React.Component {
             <FixedBG
               className="FixedBG"
               color={Co.white_color}
-              style={{
-                backgroundColor: "#333"
-              }}
+              url={Imgs.bg_counters}
             >
+              <div className="over-lay"></div>
               <Container className="container">
                 <Card className="Card">
                   <H3>coffees served</H3>
                   <H2 color={Co.white_color}>2538</H2>
-                  <NexaFont fontSize="70px" className="NexaFont image">W</NexaFont>
-                  <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+                  <NexaFont fontSize="80px" className="NexaFont pic">W</NexaFont>
+                  <NexaFont fontSize="50px" className="NexaFont">KL</NexaFont>
                 </Card>
                 <Card className="Card">
                   <H3>chickens served</H3>
                   <H2 color={Co.white_color}>1264</H2>
-                  <NexaFont fontSize="70px" className="NexaFont image">e</NexaFont>
-                  <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+                  <NexaFont fontSize="80px" className="NexaFont pic">e</NexaFont>
+                  <NexaFont fontSize="50px" className="NexaFont">KL</NexaFont>
                 </Card>
                 <Card className="Card">
                   <H3>meats cooked</H3>
                   <H2 color={Co.white_color}>6538</H2>
-                  <NexaFont fontSize="70px" className="NexaFont image">i</NexaFont>
-                  <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+                  <NexaFont fontSize="80px" className="NexaFont pic">i</NexaFont>
+                  <NexaFont fontSize="50px" className="NexaFont">KL</NexaFont>
                 </Card>
                 <Card className="Card">
                   <H3>fishes fried</H3>
                   <H2 color={Co.white_color}>462</H2>
-                  <NexaFont fontSize="70px" className="NexaFont image">n</NexaFont>
-                  <NexaFont fontSize="35px" className="NexaFont">KL</NexaFont>
+                  <NexaFont fontSize="80px" className="NexaFont pic">n</NexaFont>
+                  <NexaFont fontSize="50px" className="NexaFont">KL</NexaFont>
                 </Card>
               </Container>
             </FixedBG>
@@ -715,8 +656,7 @@ export default class App extends React.Component {
               <Card border className="Card box2">
                 <div className="image">
                   <img
-                    //src="./demoData/images/blog1.jpg"
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
+                    src={Imgs.blog1}
                     alt="blog1"
                   ></img>
                   <div className="link">
@@ -735,8 +675,7 @@ export default class App extends React.Component {
               <Card border className="Card box3">
                 <div className="image">
                   <img
-                    //src="./demoData/images/blog3.jpg"
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog21-1024x695.jpg"
+                    src={Imgs.blog2}
                     alt="blog2"
                   ></img>
                   <div className="link">
@@ -755,8 +694,7 @@ export default class App extends React.Component {
               <Card border className="Card box4">
                 <div className="image">
                   <img
-                    //src="./demoData/images/blog1.jpg"
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
+                    src={Imgs.blog3}
                     alt="blog3"
                   ></img>
                   <div className="link">
@@ -783,8 +721,7 @@ export default class App extends React.Component {
             <FixedBG
               className="FixedBG"
               color={Co.white_color}
-              //url= "./demoData/images/bg_street.jpg"
-              url="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/imageback31.jpg"
+              url= {Imgs.bg_street}
             >
               <Container>
                 <Intro className="box1">
@@ -825,8 +762,7 @@ export default class App extends React.Component {
                 <div className="image">
                   <img
                     className="image"
-                    //src="./demoData/images/blog1.jpg"
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/01/imageresto.png"
+                    src={Imgs.aboutus}
                     alt="http://aboutUs"
                   ></img>
                 </div>
@@ -838,7 +774,7 @@ export default class App extends React.Component {
                 <H5>Recent Posts</H5>
                 <SideCard className="SideCard">
                   <img
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
+                    src={Imgs.blog1}
                     alt="blog1"
                   ></img>
                   <div className="topic">
@@ -848,8 +784,8 @@ export default class App extends React.Component {
                 </SideCard>
                 <SideCard className="SideCard">
                   <img
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
-                    alt="blog1"
+                    src={Imgs.blog2}
+                    alt="blog2"
                   ></img>
                   <div className="topic">
                     <H6>Daily special foods that you will going to love</H6>
@@ -858,8 +794,8 @@ export default class App extends React.Component {
                 </SideCard>
                 <SideCard className="SideCard">
                   <img
-                    src="http://bliccathemes.com/themes/pronto/demo1/wp-content/uploads/2015/02/blog31-1024x695.jpg"
-                    alt="blog1"
+                    src={Imgs.blog3}
+                    alt="blog3"
                   ></img>
                   <div className="topic">
                     <H6>Chilli cooking lesson from our master chefs</H6>
