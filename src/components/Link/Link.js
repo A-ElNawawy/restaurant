@@ -33,6 +33,7 @@ const Link = styled.a`
     }
   `}
   ${props => props.active && css`
+    color: ${Co.gold_color};
     :after{
       transform: scaleX(1);
     }
