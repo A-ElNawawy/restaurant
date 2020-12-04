@@ -17,9 +17,8 @@ import Summery from './components/Summery/Summery';
 import SideCard from './components/SideCard/SideCard';
 import H6 from './components/H6/H6';
 import CopyRight from './components/CopyRight/CopyRight';
-//import SlideShow from './components/SlideShow/SlideShow';
-//import SimpleSlideShow from './components/SimpleSlideShow/SimpleSlideShow';
-import SlideShowAuto from './components/SlideShowAuto/SlideShowAuto';
+import SlideShowSimple from './components/SlideShowSimple/SlideShowSimple';
+//import SlideShowAuto from './components/SlideShowAuto/SlideShowAuto';
 /* End Importing Components */
 
 /* Start Importing Constants */
@@ -567,8 +566,8 @@ export default class App extends React.Component {
           </nav>
         </Header>
         <section className="Body">
-          {/*<SimpleSlideShow></SimpleSlideShow>*/}
-          <SlideShowAuto></SlideShowAuto>
+          <SlideShowSimple></SlideShowSimple>
+          {/*<SlideShowAuto></SlideShowAuto>*/}
           <Carousel className="Carousel">
             <Container className="Container">
               <div id="no1" className="flashy no1">

@@ -1,8 +1,8 @@
 import React from 'react';
 //import styled from 'styled-components';
-import './SimpleSlideShow.css';
+import './SlideShowSimple.css';
 
-export default class SimpleSlideShow extends React.Component {
+export default class SlideShowSimple extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +59,7 @@ export default class SimpleSlideShow extends React.Component {
       this.showSlides();
     }
     return(
-      <div className="SimpleSlideShow">
+      <div className="SlideShowSimple">
         <div className="slideshow-container">
           <div className="mySlides fade">
             <div className="text">Caption One</div>
