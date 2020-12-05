@@ -87,7 +87,7 @@ const Header = styled.header`
   .main-nav{
     .container{
       align-items: center;
-      height: 70px;
+      /*height: 70px;*/
     }
     .left{
       .logo{
@@ -99,6 +99,7 @@ const Header = styled.header`
     }
     .right{
       margin-right: -14px;
+      margin-bottom: 15px;
       ul{
         display: flex;
         li{
@@ -113,14 +114,12 @@ const Header = styled.header`
   }
 `;
 const Carousel = styled.div`
-  /*width: 100%;*/
-  /*border: 30px solid #000;*/
   height: 514px;
-  /*padding: 125px 0;*/
 `;
 const Features = styled.div`
   .container{
     padding: 80px 0;
+    overflow: hidden;
     display: grid;
     justify-content: center;
     row-gap: 40px;
@@ -146,6 +145,20 @@ const Features = styled.div`
       }
       p{
         text-align: center;
+      }
+    }
+    .features-fade {
+      animation-name: features-fade;
+    }
+    .time1{animation-duration: .5s;}
+    .time2{animation-duration: 1s;}
+    .time3{animation-duration: 1.5s;}
+    @keyframes features-fade {
+      from {
+        transform: translateX(-500px);
+      }
+      to {
+        transform: translateX(0);
       }
     }
   }
@@ -181,7 +194,7 @@ const H4 = styled.h4`
 const Offer = styled.div`
   .FixedBG{
     padding: 90px 0 150px;
-    height: 500px;
+    /*height: 500px;*/
   }
   p{
     font-size: 48px;
@@ -291,6 +304,14 @@ const FromBlog = styled.div`
           align-items: center;
           z-index: 1;
           opacity: 0;
+          .Button{
+            padding: 16px;
+            i{
+              font-size: 20px;
+              color: #2a2a2a;
+            }
+          }
+
         }
         .over-lay{
           border-top-left-radius: 5px;
@@ -338,6 +359,7 @@ const FromBlog = styled.div`
   }
 `;
 const UpComingEvents = styled.div`
+  display: none;
   .FixedBG{
     padding: 80px 0;
   }
@@ -506,7 +528,7 @@ export default class App extends React.Component {
             <nav className="main-nav">
               <Container className="container no-wrap">
                 <div className="left capital">
-                  <Link className="logo" href="#void">pronto</Link>
+                  <Link className="logo" href="#void">Printa</Link>
                 </div>
                 <div className="right">
                   <ul>
@@ -603,10 +625,10 @@ export default class App extends React.Component {
                   <Input normal type="text" placeholder="Name" name="name"></Input>
                   <Input normal type="text" placeholder="Last Name" name="last-name"></Input>
                   <Input normal type="email" placeholder="E-mail" name="email"></Input>
-                  <Input normal type="text" placeholder="time" name="time"></Input>
+                  <Input normal type="time" placeholder="time" name="time"></Input>
                   <Input normal type="date" placeholder="" name="date"></Input>
                   <Input normal type="number" placeholder="Guest Number" name="guest-number"></Input>
-                  <Input button className="full-width" type="submit" value="Book A Table" name="guest-number"></Input>
+                  <Input button goldenButton className="full-width" type="submit" value="Book A Table" name="guest-number"></Input>
                 </Form>
               </div>
             </Container>
@@ -662,7 +684,7 @@ export default class App extends React.Component {
                     alt="blog1"
                   ></img>
                   <div className="link">
-                    <Button goldenButton href="#void">XX</Button>
+                    <Button className="Button" whiteButton href="#void"><i className="fas fa-link"></i></Button>
                   </div>
                   <div className="over-lay"></div>
                 </div>
@@ -681,7 +703,7 @@ export default class App extends React.Component {
                     alt="blog2"
                   ></img>
                   <div className="link">
-                    <Button goldenButton href="#void">XX</Button>
+                    <Button className="Button" whiteButton href="#void"><i className="fas fa-link"></i></Button>
                   </div>
                   <div className="over-lay"></div>
                 </div>
@@ -700,7 +722,7 @@ export default class App extends React.Component {
                     alt="blog3"
                   ></img>
                   <div className="link">
-                    <Button goldenButton href="#void">XX</Button>
+                    <Button className="Button" whiteButton href="#void"><i className="fas fa-link"></i></Button>
                   </div>
                   <div className="over-lay"></div>
                 </div>
@@ -769,38 +791,44 @@ export default class App extends React.Component {
                   ></img>
                 </div>
                 <div className="topic">
-                  <P>welcome to the Pronto Restaurant. The best steaks in town is in.</P>
+                  <P>welcome to the Printa Restaurant. The best steaks in town is in.</P>
                 </div>
               </Card>
               <div className="recent-posts">
                 <H5>Recent Posts</H5>
                 <SideCard className="SideCard">
-                  <img
-                    src={Imgs.blog1}
-                    alt="blog1"
-                  ></img>
+                  <Link href="#void">
+                    <img
+                      src={Imgs.blog1}
+                      alt="blog1"
+                    ></img>
+                  </Link>
                   <div className="topic">
-                    <H6>Hand picked meals for our best.</H6>
+                    <H6><Link href="#void">Hand picked meals for our best.</Link></H6>
                     <P>February 28, 2015</P>
                   </div>
                 </SideCard>
                 <SideCard className="SideCard">
-                  <img
-                    src={Imgs.blog2}
-                    alt="blog2"
-                  ></img>
+                  <Link href="#void">
+                    <img
+                      src={Imgs.blog2}
+                      alt="blog2"
+                    ></img>
+                  </Link>
                   <div className="topic">
-                    <H6>Daily special foods that you will going to love</H6>
+                    <H6><Link href="#void">Daily special foods that you will going to love</Link></H6>
                     <P>February 28, 2015</P>
                   </div>
                 </SideCard>
                 <SideCard className="SideCard">
-                  <img
-                    src={Imgs.blog3}
-                    alt="blog3"
-                  ></img>
+                  <Link href="#void">
+                    <img
+                      src={Imgs.blog3}
+                      alt="blog3"
+                    ></img>
+                  </Link>
                   <div className="topic">
-                    <H6>Chilli cooking lesson from our master chefs</H6>
+                    <H6><Link href="#void">Chilli cooking lesson from our master chefs</Link></H6>
                     <P>February 28, 2015</P>
                   </div>
                 </SideCard>
@@ -833,7 +861,7 @@ export default class App extends React.Component {
                 </ul>
               </div>
               <div className="logo">
-                <Link className="" href="#void">pronto</Link>
+                <Link className="" href="#void">Printa</Link>
               </div>
               <div className="copy-right">
                 <P>Copyright &copy; 2020 ElNawawy Web. All rights reserved.</P>

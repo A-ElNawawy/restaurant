@@ -23,8 +23,7 @@ ul{
 }
 body{
   font-weight: 300;
-  font-size: 12px;
-  height: 2000px;
+  font-size: 15px;
 }
 .capital{
   text-transform: capitalize;
