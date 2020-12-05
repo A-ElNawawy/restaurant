@@ -435,7 +435,6 @@ const Footer = styled.footer`
         flex-basis: 100%
       }
       .social{
-        /*background-color: red;*/
         color: ${Co.white_color};
         display: flex;
         justify-content: center;
@@ -457,7 +456,7 @@ const Footer = styled.footer`
         line-height: 78px;
         margin-bottom: 15px;
       }
-      .parag{
+      .copy-right{
         text-align: center;
         p{
           color: ${Co.copyRight_color};
@@ -833,7 +832,7 @@ export default class App extends React.Component {
               <div className="logo">
                 <Link className="" href="#void">pronto</Link>
               </div>
-              <div className="parag">
+              <div className="copy-right">
                 <P>Copyright &copy; 2020 ElNawawy Web. All rights reserved.</P>
               </div>
             </Container>
