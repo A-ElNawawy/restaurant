@@ -19,6 +19,7 @@ import H6 from './components/H6/H6';
 import P from './components/P/P';
 import CopyRight from './components/CopyRight/CopyRight';
 import SlideShowAuto from './components/SlideShowAuto/SlideShowAuto';
+import NavSticky from './components/NavSticky/NavSticky';
 /* End Importing Components */
 
 /* Start Importing Constants */
@@ -501,25 +502,27 @@ export default class App extends React.Component {
               </div>
             </Container>
           </nav>
-          <nav className="main-nav">
-            <Container className="container no-wrap">
-              <div className="left capital">
-                <Link className="logo" href="#void">pronto</Link>
-              </div>
-              <div className="right">
-                <ul>
-                  <li><Link hover active className="upper" href="#void">home</Link></li>
-                  <li><Link hover className="upper" href="#void">menu</Link></li>
-                  <li><Link hover className="upper" href="#void">about us</Link></li>
-                  <li><Link hover className="upper" href="#void">blog</Link></li>
-                  <li><Link hover className="upper" href="#void">shop</Link></li>
-                  <li><Link hover className="upper" href="#void">features</Link></li>
-                  <li><Link hover className="upper" href="#void">contact us</Link></li>
-                  <li><Link hover className="upper" href="#void">buy now</Link></li>
-                </ul>
-              </div>
-            </Container>
-          </nav>
+          <NavSticky>
+            <nav className="main-nav">
+              <Container className="container no-wrap">
+                <div className="left capital">
+                  <Link className="logo" href="#void">pronto</Link>
+                </div>
+                <div className="right">
+                  <ul>
+                    <li><Link hover active className="upper" href="#void">home</Link></li>
+                    <li><Link hover className="upper" href="#void">menu</Link></li>
+                    <li><Link hover className="upper" href="#void">about us</Link></li>
+                    <li><Link hover className="upper" href="#void">blog</Link></li>
+                    <li><Link hover className="upper" href="#void">shop</Link></li>
+                    <li><Link hover className="upper" href="#void">features</Link></li>
+                    <li><Link hover className="upper" href="#void">contact us</Link></li>
+                    <li><Link hover className="upper" href="#void">buy now</Link></li>
+                  </ul>
+                </div>
+              </Container>
+            </nav>
+          </NavSticky>
         </Header>
         <section className="Body">
           <Carousel className="Carousel">
