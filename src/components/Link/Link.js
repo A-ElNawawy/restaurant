@@ -10,6 +10,7 @@ const Link = styled.a`
   transition: all .4s ease-in-out;
   :hover{
     color: ${Co.gold_color};
+    cursor: pointer;
   }
   i{
     font-size: 15px;

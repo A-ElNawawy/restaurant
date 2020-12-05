@@ -6,6 +6,7 @@ const SideCard = styled.div`
   display: flex;
   height: 70px;
   img{
+    height: 70px;
     width: 74px;
   }
   .topic{

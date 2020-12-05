@@ -11,10 +11,10 @@ const SlideShowContainer = styled.div`
   a{text-decoration: none;}
   *{box-sizing: border-box}
   .mySlides{display: none;}
-  .shown{
+  /*.shown{
     opacity: 1;
     transform: scale(1);
-  }
+  }*/
   .mySlides img {
     width: 100%;
   }
@@ -22,7 +22,7 @@ const SlideShowContainer = styled.div`
   .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 41%;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -186,15 +186,11 @@ export default class SlideShowAuto extends React.Component {
   }
 
   incrementSlideIndex() {
-    console.log("From incrementSlideIndex");
     if (this.state.slideIndex + 1 > this.state.slidesLength) {
-      console.log("this.state.slideIndex + 1 = ", this.state.slideIndex + 1);
       this.setState({slideIndex: 1})
     }else if (this.state.slideIndex + 1 < 1) {
-      console.log("this.state.slideIndex + 1 = ", this.state.slideIndex + 1);
       this.setState({slideIndex: this.state.slidesLength})
     }else{
-      console.log("this.state.slideIndex =", this.state.slideIndex);
       this.setState((state, props) => ({
         slideIndex: state.slideIndex + 1
       }));
