@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-//import styled from 'styled-components';
-//import * as Co from './../../includes/constants';
-//import * as Imgs from './../../demoData/images/index';
 
-const NavSticky = styled.div`
+const NavStickyStyle = styled.div`
   #navbar {
     background-color: #fff;
     overflow: hidden;
@@ -17,11 +14,11 @@ const NavSticky = styled.div`
   }
 `;
 
-export default class _NavSticky extends React.Component {
+export default class NavSticky extends React.Component {
   //props:
   //-----
   /*
-
+    children
   */
   componentDidMount() {
     window.onscroll = function() {myFunction()};
@@ -37,11 +34,11 @@ export default class _NavSticky extends React.Component {
   }
   render() {
     return(
-      <NavSticky className="NavSticky">
+      <NavStickyStyle>
         <div id="navbar">
           {this.props.children}
         </div>
-      </NavSticky>
+      </NavStickyStyle>
     )
   }
 }

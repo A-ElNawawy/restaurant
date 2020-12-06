@@ -24,7 +24,7 @@ const Card = styled.div`
     width: 100%;
   }
   .topic{
-    & :first-child{
+    & > :first-of-type{
       margin-bottom: 14px;
     }
     p ~ :first-of-type{
