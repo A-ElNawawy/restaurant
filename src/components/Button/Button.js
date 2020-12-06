@@ -1,12 +1,61 @@
 import styled, {css} from 'styled-components';
-import * as Co from './../../includes/constants';
 // Props:
 // -----
-// whiteButton, goldenButton
-const Button = styled.a`
-  text-decoration: none;
-  color: inherit;
+  /*
+    padding [ Default: "10px 20px" ]
+    color [ Default: "black" ]
+    backgroundColor [ Default: "white" ]
+    width [ Default: "auto" ]
+    fontSize [ Default: "inherit" ]
+    fontFamily [ Default: "inherit" ]
+    fontWeight [ Default: "normal" ]
+    fontStyle [ Default: "normal" ]
+    anchor [ Set It If You Will Use Anchor Inside the Button ]
+    noBorder [ Set It For No Border ]
+  */
+const ButtonStyle = styled.button`
+  /* Resets */
+  border: none;
+  display: block;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  a{
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    display: block;
+    padding: ${props => props.padding || "10px 20px"};
+  }
+  /* ---------------- */
+  text-transform: capitalize;
+  color: ${props => props.color || "black"};
+  background-color: ${props => props.backgroundColor || "white"};
+  width: ${props => props.width || "auto"};
+  padding: ${props => props.padding || "10px 20px"};
+  ${props => props.anchor && css`
+    padding: 0;
+  `}
+  font-size: ${props => props.fontSize || "inherit"};
+  font-family: ${props => props.fontFamily || "inherit"};
+  font-weight: ${props => props.fontWeight || "normal"};
+  font-style: ${props => props.fontStyle || "normal"};
+  border-style: ${props => props.noBorder || "solid"};
+  border-width: 1px;
+  border-color: ${props => props.color || "black"};
   border-radius: 5px;
+
+  /* For Hover Effect */
+  a{
+    /*
+      To Prevent cancellation of Anchor function Occurred by Hover Effect
+      We Will Increase z-index of Anchor
+    */
+    position: relative;
+    z-index: 2;
+  }
   position: relative;
   :after{
     content: "";
@@ -26,21 +75,43 @@ const Button = styled.a`
       height: 100%;
     }
   }
-  ${props => props.whiteButton && css`
-    padding: 14px 30px;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    background-color: ${Co.white_color};
-    color: ${Co.black_color};
-  `}
-  ${props => props.goldenButton && css`
-    background-color: ${Co.gold_color};
-    color: ${Co.white_color};
-    padding: 9px 12px;
-    font-style: italic;
-    font-size: 10px;
-  `}
 `;
+
+function Button({
+  //Attributes:
+  className,
+  type,
+  //Props:
+  children,
+  padding,
+  color,
+  backgroundColor,
+  width,
+  fontSize,
+  fontFamily,
+  fontWeight,
+  fontStyle,
+  anchor,
+  noBorder,
+}) {
+  return(
+    <ButtonStyle
+      //Attributes:
+      className={className}
+      type={type}
+      //Props:
+      padding={padding}
+      color={color}
+      backgroundColor={backgroundColor}
+      width={width}
+      fontSize={fontSize}
+      fontFamily={fontFamily}
+      fontWeight={fontWeight}
+      fontStyle={fontStyle}
+      anchor={anchor}
+      noBorder={noBorder}
+    >{children}</ButtonStyle>
+  )
+}
+
 export default Button;

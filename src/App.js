@@ -215,7 +215,7 @@ const BookATable = styled.div`
     margin-top: 65px;
   }
 `;
-const Form = styled.div`
+const Form = styled.form`
   width: 100%;
   display: grid;
   grid-template-columns: 48% 48%;
@@ -304,14 +304,10 @@ const FromBlog = styled.div`
           align-items: center;
           z-index: 1;
           opacity: 0;
-          .Button{
-            padding: 16px;
-            i{
-              font-size: 20px;
-              color: #2a2a2a;
-            }
+          i{
+            font-size: 20px;
+            color: #2a2a2a;
           }
-
         }
         .over-lay{
           border-top-left-radius: 5px;
@@ -352,9 +348,6 @@ const FromBlog = styled.div`
     .load-more{
       display: flex;
       justify-content: center;
-      a{
-        font-size: 15px!important; /* To Be Removed After Adjusting Button Component */
-      }
     }
   }
 `;
@@ -405,16 +398,12 @@ const Footer = styled.footer`
           i.fa-envelope{
             position: absolute;
             top: 42px;
-            right: 115px;
+            right: 130px;
             transform: rotate(-25deg);
             font-size: 18px;
           }
           [type="submit"]{
             margin-left: 8px;
-            padding: 10px 15px;
-            font-weight: bold;
-            /*font-size: 10px;*/
-            font-style: italic;
           }
         }
       }
@@ -607,7 +596,15 @@ export default class App extends React.Component {
                 <p>“ Fresh and healthy master of town ”</p>
               </H4>
               <div className="buy-now">
-                <Button whiteButton>buy now</Button>
+                <Button
+                  fontWeight="bold"
+                  width="auto"
+                  fontStyle="italic"
+                  noBorder
+                  anchor
+                >
+                  <a href="#void">buy now</a>
+                </Button>
               </div>
             </FixedBG>
           </Offer>
@@ -628,7 +625,14 @@ export default class App extends React.Component {
                   <Input normal type="time" placeholder="time" name="time"></Input>
                   <Input normal type="date" placeholder="" name="date"></Input>
                   <Input normal type="number" placeholder="Guest Number" name="guest-number"></Input>
-                  <Input button goldenButton className="full-width" type="submit" value="Book A Table" name="guest-number"></Input>
+                  <Button
+                    className="full-width"
+                    type="submit"
+                    backgroundColor={Co.gold_color}
+                    color={Co.white_color}
+                  >
+                    Book A Table
+                  </Button>
                 </Form>
               </div>
             </Container>
@@ -684,7 +688,16 @@ export default class App extends React.Component {
                     alt="blog1"
                   ></img>
                   <div className="link">
-                    <Button className="Button" whiteButton href="#void"><i className="fas fa-link"></i></Button>
+                    <Button
+                      className="Button"
+                      width="auto"
+                      fontStyle="italic"
+                      padding="16px"
+                      noBorder
+                      anchor
+                    >
+                      <a href="#void"><i className="fas fa-link"></i></a>
+                    </Button>
                   </div>
                   <div className="over-lay"></div>
                 </div>
@@ -692,7 +705,16 @@ export default class App extends React.Component {
                   <H5><Link href="#void">hand picked meals for our best.</Link></H5>
                   <P>{paragraph2}</P>
                   <div className="read-more">
-                    <Button goldenButton href="#void">Read more</Button>
+                    <Button
+                      padding="9px 12px"
+                      fontStyle="italic"
+                      fontSize="13px"
+                      anchor
+                      backgroundColor={Co.gold_color}
+                      color={Co.white_color}
+                    >
+                      <a href="#void">Read more</a>
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -703,7 +725,16 @@ export default class App extends React.Component {
                     alt="blog2"
                   ></img>
                   <div className="link">
-                    <Button className="Button" whiteButton href="#void"><i className="fas fa-link"></i></Button>
+                    <Button
+                      className="Button"
+                      width="auto"
+                      fontStyle="italic"
+                      padding="16px"
+                      noBorder
+                      anchor
+                    >
+                      <a href="#void"><i className="fas fa-link"></i></a>
+                    </Button>
                   </div>
                   <div className="over-lay"></div>
                 </div>
@@ -711,7 +742,16 @@ export default class App extends React.Component {
                   <H5><Link href="#void">daily special foods that you will going to love</Link></H5>
                   <P>{paragraph2}</P>
                   <div className="read-more">
-                    <Button goldenButton href="#void">Read more</Button>
+                    <Button
+                      padding="9px 12px"
+                      fontStyle="italic"
+                      fontSize="13px"
+                      anchor
+                      backgroundColor={Co.gold_color}
+                      color={Co.white_color}
+                    >
+                      <a href="#void">Read more</a>
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -722,7 +762,16 @@ export default class App extends React.Component {
                     alt="blog3"
                   ></img>
                   <div className="link">
-                    <Button className="Button" whiteButton href="#void"><i className="fas fa-link"></i></Button>
+                    <Button
+                      className="Button"
+                      width="auto"
+                      fontStyle="italic"
+                      padding="16px"
+                      noBorder
+                      anchor
+                    >
+                      <a href="#void"><i className="fas fa-link"></i></a>
+                    </Button>
                   </div>
                   <div className="over-lay"></div>
                 </div>
@@ -730,13 +779,28 @@ export default class App extends React.Component {
                   <H5><Link href="#void">chilli cooking lesson from our master chefs</Link></H5>
                   <P>{paragraph2}</P>
                   <div className="read-more">
-                    <Button goldenButton href="#void">Read more</Button>
+                    <Button
+                      padding="9px 12px"
+                      fontStyle="italic"
+                      fontSize="13px"
+                      anchor
+                      backgroundColor={Co.gold_color}
+                      color={Co.white_color}
+                    >
+                      <a href="#void">Read more</a>
+                    </Button>
                   </div>
                 </div>
               </Card>
               <div className="load-more box5">
-                <Button goldenButton>
-                  <NexaFont>K</NexaFont> load more <NexaFont>L</NexaFont>
+                <Button
+                  padding="5px 15px"
+                  fontWeight="bold"
+                  fontSize="15px"
+                  backgroundColor={Co.gold_color}
+                  color={Co.white_color}
+                >
+                  <a href="#void"><NexaFont fontSize="23px">K</NexaFont> load more <NexaFont fontSize="23px">L</NexaFont></a>
                 </Button>
               </div>
             </Container>
@@ -769,10 +833,20 @@ export default class App extends React.Component {
               </div>
               <div className="right">
                 <Form className="Form">
-                  <Input type="text" placeholder="your email address" name="name"></Input>
+                  <Input type="email" placeholder="your email address" name="email"></Input>
                   <i className="far fa-envelope"></i>
-                  {/*<i class="far fa-envelope"></i>*/}
-                  <Input button whiteButton type="submit" value="sign up" name="guest-number"></Input>
+                  <Button
+                    type="submit"
+                    fontWeight="bold"
+                    fontStyle="italic"
+                    fontSize="13px"
+                    padding="12px 20px"
+                    width="140px"
+                    backgroundColor={Co.white_color}
+                    noBorder
+                  >
+                    sign up
+                  </Button>
                 </Form>
               </div>
             </Container>
