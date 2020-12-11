@@ -55,11 +55,17 @@ const Header = styled.header`
       align-items: center;
       height: 50px;
       .left{
+        & > div{
+          display: flex;
+          align-items: center;
+        }
         & > div:not(:last-of-type){
           margin-right: 20px;
         }
         i{
           margin-right: 5px;
+          position: relative;
+          top: 2px;
         }
       }
       .right{
@@ -225,6 +231,9 @@ const Footer = styled.footer`
         font-size: 40px;
         line-height: 78px;
         margin-bottom: 15px;
+        a{
+          display: inline-block;
+        }
       }
       .copy-right{
         text-align: center;
@@ -300,8 +309,8 @@ export default class App extends React.Component {
             </nav>
           </NavSticky>
         </Header>
-        <Switch>
-          <section className="Body">
+        <section className="Body">
+          <Switch>
             <Route exact path="/menu">
               <Menu />
             </Route>
@@ -317,8 +326,8 @@ export default class App extends React.Component {
             <Route exact path="/">
               <Home />
             </Route>
-          </section>
-        </Switch>
+          </Switch>
+        </section>
         <Footer>
             <Newsletter className="Newsletter">
               <Container className="container no-wrap">

@@ -1,38 +1,39 @@
 import styled, {css} from 'styled-components';
 import * as Co from './../../includes/constants';
+import A from './../../styled/A';
 // Props:
 // -----
-// hover, active
-const Link = styled.a`
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-  transition: all .4s ease-in-out;
+// active
+const Link = styled(A)`
   :hover{
     color: ${Co.gold_color};
-    cursor: pointer;
   }
   i{
     font-size: 15px;
   }
-  ${props => props.hover && css`
+`;
+const NavLink = styled(A)`
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  transition: all .4s ease-in-out;
+  :after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -7px;
+    left: 0;
+    background-color: ${Co.gold_color};
+    transform: scaleX(0);
+    transition: all 0.4s ease-in-out 0s;
+  }
+  :hover{
+    color: ${Co.gold_color};
     :after{
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -7px;
-      left: 0;
-      background-color: ${Co.gold_color};
-      transform: scaleX(0);
-      transition: all 0.4s ease-in-out 0s;
+      transform: scaleX(1);
     }
-    :hover{
-      :after{
-        transform: scaleX(1);
-      }
-    }
-  `}
+  }
   ${props => props.active && css`
     color: ${Co.gold_color};
     :after{
@@ -40,4 +41,7 @@ const Link = styled.a`
     }
   `}
 `;
-export default Link;
+export {
+  Link,
+  NavLink
+};
