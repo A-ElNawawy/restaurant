@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as Co from './../../includes/constants';
+import * as Co from '../../includes/constants';
 // Props:
 // -----
 // 

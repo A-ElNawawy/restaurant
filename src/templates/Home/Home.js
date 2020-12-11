@@ -1,28 +1,28 @@
 import styled from 'styled-components';
-import * as Co from './../../includes/constants';
+import * as Co from '../../includes/constants';
 
 /* Start Importing Components */
-import MyLink from './../Link/Link';
-import Container from './../Container/Container';
-import Button from './../Button/Button';
-import Input from './../Input/Input';
-import NexaFont from './../NexaFont/NexaFont';
-import DecorationLine from './../DecorationLine/DecorationLine';
-import FixedBG from './../FixedBG/FixedBG';
-import Card from './../Card/Card';
-import H2 from './../H2/H2';
-import H5 from './../H5/H5';
-import P from './../P/P';
-import SlideShowAuto from './../SlideShowAuto/SlideShowAuto';
-import Form from './../Form/Form';
+import {Link as MyLink} from '../../components/Link/Link';
+import Container from '../../components/Container/Container';
+import Button from '../../components/Button/Button';
+import Input from '../../components/Input/Input';
+import NexaFont from '../../components/NexaFont/NexaFont';
+import DecorationLine from '../../components/DecorationLine/DecorationLine';
+import FixedBG from '../../components/FixedBG/FixedBG';
+import Card from '../../components/Card/Card';
+import H2 from '../../components/H2/H2';
+import H5 from '../../components/H5/H5';
+import P from '../../components/P/P';
+import SlideShowAuto from '../../components/SlideShowAuto/SlideShowAuto';
+import Form from '../../components/Form/Form';
 /* End Importing Components */
 
 /* Start Importing Languages */
-import {paragraph, paragraph2} from './../../includes/langs/english';
+import {paragraph, paragraph2} from '../../includes/langs/english';
 /* End Importing Languages */
 
 /* Start Importing Images */
-import * as Imgs from './../../demoData/images/index';
+import * as Imgs from '../../demoData/images/index';
 /* End Importing Images */
 
 
