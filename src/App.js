@@ -1,27 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  BrowserRouter,
   Switch,
   Route,
   Link
 } from "react-router-dom";
 
 /* Start Importing Components */
-import Home from './components/Home/Home';
-import Menu from './components/Menu/Menu';
-import MyLink from './components/Link/Link';
+import Home from './templates/Home/Home';
+import Menu from './templates/Menu/Menu';
+import AboutUs from './templates/AboutUs/AboutUs';
+import Blog from './templates/Blog/Blog';
+import ContactUs from './templates/ContactUs/ContactUs';
+import {Link as MyLink, NavLink} from './components/Link/Link';
 import Container from './components/Container/Container';
 import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 import Card from './components/Card/Card';
 import H5 from './components/H5/H5';
-import Newsletter from './components/Newsletter/Newsletter';
-import Summery from './components/Summery/Summery';
+import Newsletter from './templates/Newsletter/Newsletter';
+import Summery from './templates/Summery/Summery';
 import SideCard from './components/SideCard/SideCard';
 import H6 from './components/H6/H6';
 import P from './components/P/P';
-import CopyRight from './components/CopyRight/CopyRight';
+import CopyRight from './templates/CopyRight/CopyRight';
 import NavSticky from './components/NavSticky/NavSticky';
 import Form from './components/Form/Form';
 /* End Importing Components */
@@ -104,7 +106,7 @@ const Header = styled.header`
         display: flex;
         li{
           font-size: 14px;
-          font-weight: 700;
+          font-weight: bold;
           margin: 0 17px;
         }
         li:not(:last-of-type){
@@ -278,25 +280,20 @@ export default class App extends React.Component {
                 <div className="right">
                   <ul>
                     <li>
-                      
-                      <MyLink hover active className="upper" href="#void">
-                      <Link to="/">
-                      home
-                      </Link>
-                      </MyLink>
+                      <NavLink active href="#void"><Link to="/">home</Link></NavLink>
                     </li>
                     <li>
-                      
-                      <Link to="/menu">
-                      <MyLink hover className="upper" href="#void">menu</MyLink>
-                      </Link>
+                      <NavLink href="#void"><Link to="/menu">menu</Link></NavLink>
                     </li>
-                    <li><MyLink hover className="upper" href="#void">about us</MyLink></li>
-                    <li><MyLink hover className="upper" href="#void">blog</MyLink></li>
-                    <li><MyLink hover className="upper" href="#void">shop</MyLink></li>
-                    <li><MyLink hover className="upper" href="#void">features</MyLink></li>
-                    <li><MyLink hover className="upper" href="#void">contact us</MyLink></li>
-                    <li><MyLink hover className="upper" href="#void">buy now</MyLink></li>
+                    <li>
+                      <NavLink href="#void"><Link to="/aboutus">about us</Link></NavLink>
+                    </li>
+                    <li>
+                      <NavLink href="#void"><Link to="/blog">blog</Link></NavLink>
+                    </li>
+                    <li>
+                      <NavLink href="#void"><Link to="/contactus">contact us</Link></NavLink>
+                    </li>
                   </ul>
                 </div>
               </Container>
@@ -307,6 +304,15 @@ export default class App extends React.Component {
           <section className="Body">
             <Route exact path="/menu">
               <Menu />
+            </Route>
+            <Route exact path="/aboutus">
+              <AboutUs />
+            </Route>
+            <Route exact path="/blog">
+              <Blog />
+            </Route>
+            <Route exact path="/contactus">
+              <ContactUs />
             </Route>
             <Route exact path="/">
               <Home />
