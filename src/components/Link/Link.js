@@ -41,7 +41,15 @@ const NavLink = styled(A)`
     }
   `}
 `;
+const FilterLink = styled(Link)`
+  text-transform: uppercase;
+  font-weight: bold;
+  ${props => props.active && css`
+    color: ${Co.gold_color};
+  `}
+`;
 export {
   Link,
-  NavLink
+  NavLink,
+  FilterLink
 };

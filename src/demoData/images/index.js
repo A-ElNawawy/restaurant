@@ -10,6 +10,7 @@ import features1 from './features1.jpg';
 import features2 from './features2.png';
 import features3 from './features3.png';
 import small_wood from './small_wood.jpg';
+import tiramisu from './menu/tiramisu.jpg';
 export {
   bg_counters,
   bg_street,
@@ -22,5 +23,6 @@ export {
   features1,
   features2,
   features3,
-  small_wood
+  small_wood,
+  tiramisu
 };

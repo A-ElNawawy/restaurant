@@ -15,6 +15,7 @@ import H5 from '../../components/H5/H5';
 import P from '../../components/P/P';
 import SlideShowAuto from '../../components/SlideShowAuto/SlideShowAuto';
 import Form from '../../components/Form/Form';
+import Intro from './../Intro/Intro';
 /* End Importing Components */
 
 /* Start Importing Languages */
@@ -76,24 +77,6 @@ const Features = styled.div`
     }
   }
 `;
-const Intro = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width:500px;
-  margin: auto;
-  > *{
-    flex-basis: 100%;
-  }
-  img{
-    max-width:50px;
-    max-height:20px;
-  }
-  p{
-    text-align: center;
-    margin-top: 15px;
-  }
-`;
 const H3 = styled.h3`
   font-size: 20px;
   font-weight: 400;
@@ -128,7 +111,6 @@ const BookATable = styled.div`
     margin-top: 65px;
   }
 `;
-
 const Counters = styled.div`
   .FixedBG{
     padding: 150px 0 140px;
@@ -270,13 +252,11 @@ function Home() {
       </Carousel>
       <Features className="Features">
         <Container className="container">
-          <Intro className="box1">
-            <H2>Features</H2>
-            <DecorationLine className="line">M</DecorationLine>
-            <P>
-              {paragraph}
-            </P>
-          </Intro>
+          <Intro
+            className="box1"
+            heading="Features"
+            paragraph={paragraph}
+          ></Intro>
           <Card imgHeight="auto" className="Card box2">
             <img
               className="image"
@@ -339,13 +319,10 @@ function Home() {
       </Offer>
       <BookATable className="BookATable">
         <Container className="container">
-          <Intro>
-            <H2>book a table</H2>
-            <DecorationLine className="line">M</DecorationLine>
-            <P>
-              {paragraph}
-            </P>
-          </Intro>
+          <Intro
+            heading="book a table"
+            paragraph={paragraph}
+          ></Intro>
           <div className="form">
             <Form className="Form">
               <Input normal type="text" placeholder="Name" name="name"></Input>
@@ -403,13 +380,11 @@ function Home() {
       </Counters>
       <FromBlog className="FromBlog">
         <Container className="container">
-          <Intro className="box1">
-            <H2>from the blog</H2>
-            <DecorationLine className="line">M</DecorationLine>
-            <P>
-              {paragraph}
-            </P>
-          </Intro>
+          <Intro
+            className="box1"
+            heading="from the blog"
+            paragraph={paragraph}
+          ></Intro>
           <Card border className="Card box2">
             <div className="image">
               <img
@@ -541,13 +516,11 @@ function Home() {
           url= {Imgs.bg_street}
         >
           <Container>
-            <Intro className="box1">
-              <H2>upcoming events</H2>
-              <DecorationLine className="line">M</DecorationLine>
-              <P>
-                {paragraph}
-              </P>
-            </Intro>
+            <Intro
+              className="box1"
+              heading="upcoming events"
+              paragraph={paragraph}
+            ></Intro>
             <Carousel></Carousel>
           </Container>
         </FixedBG>

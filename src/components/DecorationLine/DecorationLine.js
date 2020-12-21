@@ -8,10 +8,10 @@ const Fig = styled(NexaFont)`
   color: ${Co.gold_color};
   :before,:after{
     content: "";
+    display: block;
+    background-color: ${props => props.color || Co.big_Text_color};;
     height: 1px;
     width: 85px;
-    border-top: 1px solid;
-    border-color: ${Co.big_Text_color};
     position: absolute;
   }
   :before{
@@ -24,17 +24,22 @@ const Fig = styled(NexaFont)`
   }
 `;
 
-export default function DecorationLine({children, className}) {
+export default function DecorationLine({
+  //props for function
+  children,
+  //props for Styled-Component
+  className,
+  color
+}) {
   return (
     <div
       className= {`DecorationLine ${className}`}
       style={{
-        //height: "20px",
         display: "flex",
         justifyContent: "center"
       }}
     >
-      <Fig>
+      <Fig color={color}>
         {children}
       </Fig>
     </div>
