@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/restaurant/static/css/main.547f44f4.chunk.css",
-    "main.js": "/restaurant/static/js/main.4e83f64c.chunk.js",
-    "main.js.map": "/restaurant/static/js/main.4e83f64c.chunk.js.map",
+    "main.css": "/restaurant/static/css/main.4fc8ad3b.chunk.css",
+    "main.js": "/restaurant/static/js/main.1010c2a3.chunk.js",
+    "main.js.map": "/restaurant/static/js/main.1010c2a3.chunk.js.map",
     "runtime-main.js": "/restaurant/static/js/runtime-main.3152affd.js",
     "runtime-main.js.map": "/restaurant/static/js/runtime-main.3152affd.js.map",
-    "static/js/2.f7fce130.chunk.js": "/restaurant/static/js/2.f7fce130.chunk.js",
-    "static/js/2.f7fce130.chunk.js.map": "/restaurant/static/js/2.f7fce130.chunk.js.map",
+    "static/js/2.972e2d69.chunk.js": "/restaurant/static/js/2.972e2d69.chunk.js",
+    "static/js/2.972e2d69.chunk.js.map": "/restaurant/static/js/2.972e2d69.chunk.js.map",
     "index.html": "/restaurant/index.html",
-    "static/css/main.547f44f4.chunk.css.map": "/restaurant/static/css/main.547f44f4.chunk.css.map",
-    "static/js/2.f7fce130.chunk.js.LICENSE.txt": "/restaurant/static/js/2.f7fce130.chunk.js.LICENSE.txt",
+    "static/css/main.4fc8ad3b.chunk.css.map": "/restaurant/static/css/main.4fc8ad3b.chunk.css.map",
+    "static/js/2.972e2d69.chunk.js.LICENSE.txt": "/restaurant/static/js/2.972e2d69.chunk.js.LICENSE.txt",
     "static/media/aboutus.afa9dbde.png": "/restaurant/static/media/aboutus.afa9dbde.png",
     "static/media/bg_counters.9acffa2f.jpg": "/restaurant/static/media/bg_counters.9acffa2f.jpg",
     "static/media/bg_street.7af61a00.jpg": "/restaurant/static/media/bg_street.7af61a00.jpg",
@@ -21,12 +21,13 @@
     "static/media/features1.62f7077c.jpg": "/restaurant/static/media/features1.62f7077c.jpg",
     "static/media/features2.9054d2f0.png": "/restaurant/static/media/features2.9054d2f0.png",
     "static/media/features3.5f2c1fbe.png": "/restaurant/static/media/features3.5f2c1fbe.png",
-    "static/media/index.css": "/restaurant/static/media/nexa-rust.extras-free.fe938dd4.otf"
+    "static/media/index.css": "/restaurant/static/media/nexa-rust.extras-free.fe938dd4.otf",
+    "static/media/tiramisu.4e233ceb.jpg": "/restaurant/static/media/tiramisu.4e233ceb.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.3152affd.js",
-    "static/js/2.f7fce130.chunk.js",
-    "static/css/main.547f44f4.chunk.css",
-    "static/js/main.4e83f64c.chunk.js"
+    "static/js/2.972e2d69.chunk.js",
+    "static/css/main.4fc8ad3b.chunk.css",
+    "static/js/main.1010c2a3.chunk.js"
   ]
 }
