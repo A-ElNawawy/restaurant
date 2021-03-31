@@ -289,7 +289,7 @@ export default class App extends React.Component {
                 <div className="right">
                   <ul>
                     <li>
-                      <NavLink active href="#void"><Link to="/">home</Link></NavLink>
+                      <NavLink active href="#void"><Link to="/restaurant">home</Link></NavLink>
                     </li>
                     <li>
                       <NavLink href="#void"><Link to="/menu">menu</Link></NavLink>
@@ -323,7 +323,7 @@ export default class App extends React.Component {
             <Route exact path="/contactus">
               <ContactUs />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/restaurant">
               <Home />
             </Route>
           </Switch>
